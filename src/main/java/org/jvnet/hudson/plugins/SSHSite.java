@@ -123,6 +123,7 @@ public class SSHSite {
 		try {
 			session = createSession(logger);
 			channel = createChannel(logger, session);
+			channel.setPty(true);
 			channel.setCommand(command);
 			channel.setOutputStream(logger);
 			channel.setInputStream(null);
